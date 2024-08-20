@@ -55,3 +55,23 @@ az account set --subscription=1bd6c9df-485a-459f-9a7c-6ce143b7909d
 mvn clean package
 mvn azure-functions:deploy
 ```
+
+Call the serverless function:
+```
+https://serverless-azure-XYZ.azurewebsites.net/api/HttpExample?name=Bob
+```
+
+
+### Logs & Traces
+
+See the log stream:
+
+```
+az webapp log tail -n serverless-azure-XYZ -g nag-rg-techbrunch-serverless
+```
+
+Generate sample traffic:
+
+```
+while :; do curl https://serverless-azure-XYZ.azurewebsites.net/api/HttpExample?name=Bob; echo ''; sleep 1; done
+```
