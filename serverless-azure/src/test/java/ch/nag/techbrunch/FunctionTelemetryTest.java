@@ -1,5 +1,6 @@
 package ch.nag.techbrunch;
 
+import ch.nag.techbrunch.first.FunctionTelemetry;
 import com.microsoft.azure.functions.*;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -16,7 +17,7 @@ import static org.mockito.Mockito.*;
 /**
  * Unit test for Function class.
  */
-public class FunctionTest {
+public class FunctionTelemetryTest {
     /**
      * Unit test for HttpTriggerJava method.
      */
@@ -45,7 +46,7 @@ public class FunctionTest {
         doReturn(Logger.getGlobal()).when(context).getLogger();
 
         // Invoke
-        final HttpResponseMessage ret = new Function().run(req, context);
+        final HttpResponseMessage ret = new FunctionTelemetry().run(req, context);
 
         // Verify
         assertEquals(ret.getStatus(), HttpStatus.OK);

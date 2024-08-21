@@ -51,11 +51,14 @@ mvn archetype:generate \
 -DarchetypeArtifactId="azure-functions-archetype"
 ```
 
-In both cases, please adjust *<functionAppName>serverless-azure-XYZ</functionAppName>* with your user id.
+In both cases, please adjust the following in the pom.xml with your user id:
+*<functionAppName>serverless-azure-XYZ</functionAppName>*
+*<resourceGroupName>nag-rg-techbrunch-serverless-XYZ</resourceGroupName>*
+*<appServicePlanName>techbrunch-serverless-asp-XYZ</appServicePlanName>*
 
 ### Run locally
 
-Build and run the project locally:
+Build and run the project locally from the command line:
 ```
 mvn clean package
 mvn azure-functions:run
@@ -69,7 +72,7 @@ http://localhost:7071/api/HttpExample?name=Bob
 
 ### Deploy to Azure
 
-Deploy the project to Azure:
+Deploy the project to Azure from the local command line:
 
 ```
 az login
@@ -87,13 +90,16 @@ https://serverless-azure-XYZ.azurewebsites.net/api/HttpExample?name=Bob
 
 ### Logs & Traces
 
-See the log stream:
+#### See the log stream 
+(from the local command line):
 
 ```
-az webapp log tail -n serverless-azure-XYZ -g nag-rg-techbrunch-serverless
+az webapp log tail -n serverless-azure-XYZ -g nag-rg-techbrunch-serverless-XYZ
 ```
 
-Generate sample traffic:
+#### Generate sample traffic
+
+The following is a Bash command. You can run it from Azure Cloud Shell: either from Azure Portal or from your local machine - let us show you the trick for Windows users :-)
 
 ```
 while :; do curl https://serverless-azure-XYZ.azurewebsites.net/api/HttpExample?name=Bob; echo ''; sleep 1; done

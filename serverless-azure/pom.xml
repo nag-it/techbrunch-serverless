@@ -15,6 +15,8 @@
         <azure.functions.maven.plugin.version>1.24.0</azure.functions.maven.plugin.version>
         <azure.functions.java.library.version>2.2.0</azure.functions.java.library.version>
         <functionAppName>serverless-azure-det</functionAppName>
+        <resourceGroupName>nag-rg-techbrunch-serverless-det</resourceGroupName>
+        <appServicePlanName>techbrunch-serverless-asp-det</appServicePlanName>
     </properties>
 
     <dependencies>
@@ -65,9 +67,9 @@
                     <!-- function app name -->
                     <appName>${functionAppName}</appName>
                     <!-- function app resource group -->
-                    <resourceGroup>nag-rg-techbrunch-serverless</resourceGroup>
+                    <resourceGroup>${resourceGroupName}</resourceGroup>
                     <!-- function app service plan name -->
-                    <appServicePlanName>techbrunch-serverless-asp</appServicePlanName>
+                    <appServicePlanName>${appServicePlanName}</appServicePlanName>
                     <!-- function app region-->
                     <!-- refers https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Functions:-Configuration-Details#supported-regions for all valid values -->
                     <region>switzerlandnorth</region>

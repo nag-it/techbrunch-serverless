@@ -1,4 +1,4 @@
-package ch.nag.techbrunch;
+package ch.nag.techbrunch.first;
 
 import com.microsoft.azure.functions.ExecutionContext;
 import com.microsoft.azure.functions.HttpMethod;
@@ -15,7 +15,7 @@ import java.util.Optional;
 /**
  * Azure Functions with HTTP Trigger.
  */
-public class Function {
+public class FunctionTelemetry {
 
     private TelemetryClient telemetry = new TelemetryClient();
 
@@ -24,7 +24,7 @@ public class Function {
      * 1. curl -d "HTTP Body" {your host}/api/HttpExample
      * 2. curl "{your host}/api/HttpExample?name=HTTP%20Query"
      */
-    @FunctionName("HttpExample")
+    @FunctionName("HttpExampleTelemetry")
     public HttpResponseMessage run(
             @HttpTrigger(
                 name = "req",
