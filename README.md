@@ -52,8 +52,11 @@ mvn archetype:generate \
 ```
 
 In both cases, please adjust the following in the pom.xml with your user id:
+
 *<functionAppName>serverless-azure-XYZ</functionAppName>*
+
 *<resourceGroupName>nag-rg-techbrunch-serverless-XYZ</resourceGroupName>*
+
 *<appServicePlanName>techbrunch-serverless-asp-XYZ</appServicePlanName>*
 
 ### Run locally
